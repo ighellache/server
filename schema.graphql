@@ -1,0 +1,24 @@
+type Query {
+  jobs: [Job!]
+  job(id: ID!): Job
+}
+
+type Company {
+  id: ID!
+  name: String!
+  description: String
+}
+
+type Job {
+  id: ID!
+  """
+  The date when the job was published
+  """
+  date: String!
+  title: String!
+  company: Company!
+  description: String
+}
+# defining custom object type in schema
+# scalar = single value
+# in graphql all fields are nullable by default unless we specify otherwise (by adding !)
